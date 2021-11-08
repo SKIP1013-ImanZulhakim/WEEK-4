@@ -1,0 +1,60 @@
+package assignment;
+import java.util.Scanner;
+/*
+		 * Say your brother wants to buy a used car for $5,000 and has only $2,000 for the down payment.
+		   He hits you up for a loan for the remaining $3,000.
+		   If the length of the loan is five years and he’s paying you simple interest of 3.5 percent per year to borrow the additional $3,000,
+		   Calculate the sum of interest, monthly payment, and a total of payment.
+		   
+		  Output:
+			Enter the yearly interest rate, for example, 3.5: 3.5
+			Enter the number of years as an integer, for example, 5: 5
+			Enter the loan amount, for example, 3000.00: 3000
+			The monthly payment is $105.0
+			The total payment is $6300.0
+ */
+public class assignment1A {
+
+	public static void main(String[] args) {
+		// create object sc for input
+		Scanner sc = new Scanner (System.in);	
+		
+		// declare variables
+		double rate, amount, interest, monthly, total;				
+		int year;
+		
+		//input for rate
+		System.out.println("Enter the yearly interest rate ");
+		rate = sc.nextDouble();
+		
+		//input for year
+		System.out.println("Enter the number of years as an integer ");
+		year = sc.nextInt();
+		
+		//input for amount
+		System.out.println("Enter the loan amount ");
+		amount = sc.nextDouble();
+		
+		//make rate percentage
+		rate = rate/100;
+		
+		//total payment
+		total = amount * (1 + rate * year);
+		
+		//sum of interest
+		interest = total - amount;
+		
+		//monthly payment
+		monthly = total/(year*12);
+		
+		//sum of interest
+		System.out.printf("\nThe sum of interest is RM %.2f" , interest);
+		
+		//output monthly payment
+		System.out.printf("\nThe monthly payment is RM %.2f" , monthly);
+		
+		//output  total payment
+		System.out.printf("\nThe total payment is Rm %.2f" , total);
+	}
+
+}

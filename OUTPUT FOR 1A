@@ -1,0 +1,10 @@
+Enter the yearly interest rate 
+3.5
+Enter the number of years as an integer 
+5
+Enter the loan amount 
+3000
+
+The sum of interest is RM 525.00
+The monthly payment is RM 58.75
+The total payment is Rm 3525.00

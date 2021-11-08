@@ -1,0 +1,94 @@
+package assignment;
+import java.util.Scanner;
+
+/*
+ * Calculate the total price that needs to be paid by a customer in C_MARTS.
+ * How many items that the customer buys (the maximum number of items is 3).
+ * The program will ask the quantity and price of each item.
+ * Each time the quantity and price are entered, they must be multiplied and totaled up.
+ * The program should calculate the discount obtained by the customer based on the total price.
+ * If the customer buys more than RM100, he/she is entitled to a 20% discount,
+ * Else the total price is less than RM100 the customer is only entitled to 10% discount.
+ * The program should display the total price before discount, discount received and the amount that needs to be paid.
+ */
+public class assignment1B {
+
+	public static void main(String[] args) {
+		//create object scanner
+		Scanner sc = new Scanner(System.in);
+		
+		//declare variables
+		double total, total1, total2,total3, discount = 0,totalAfter,
+			   itemPrice1, itemPrice2, itemPrice3 ;
+		int    itemNo,
+			   itemQuantt1, itemQuantt2, itemQuantt3;
+		
+		//prompt user to enter itemNo
+		System.out.println("Enter the numbers of items : ");
+		itemNo = sc.nextInt();
+		
+		//user can only enter 3 items if more than 3 user must enter new itemNo
+		if (itemNo<4) {
+		//prompt user to enter price and the quantity of the first item.
+		System.out.println("Enter price of first item : RM");
+		itemPrice1 = sc.nextDouble();
+	
+		System.out.println("Enter quantity of first item :");
+		itemQuantt1 = sc.nextInt();
+		
+		//total for first item
+		total1 = itemPrice1*itemQuantt1;
+		
+		//prompt user to enter price and the quantity of the second item.
+		System.out.println("Enter price of second item :RM");
+		itemPrice2 = sc.nextDouble();
+	
+		System.out.println("Enter quantity of second item :");
+		itemQuantt2 = sc.nextInt();
+		
+		//total for second item
+		total2 = itemPrice2*itemQuantt2;
+		
+		//prompt user to enter price and the quantity of the third item.
+		System.out.println("Enter price of third item :RM");
+		itemPrice3 = sc.nextDouble();
+			
+		System.out.println("Enter quantity of third item :");
+		itemQuantt3 = sc.nextInt();
+		
+		//total for third item
+		total3 = itemPrice3*itemQuantt3;
+		
+		//total price of every item
+		total = total1 + total2 + total3;
+		
+		//if total price more than 100 user entitled to have 20% discount
+		if   (total>100) {
+			  discount = total*0.20;
+		//else total price is less than 100 user only entitled for 10% discount
+		}else if (total<100) {
+			  discount = total*0.10;
+		}
+		
+		//calculate total after discount
+		totalAfter = total-discount;
+
+		//output total price	
+		System.out.printf("\nTotal price 	    : Rm %.2f" , total);
+		
+		//output discount received
+		System.out.printf("\nDiscount received   : Rm %.2f" , discount);
+		
+		//output price to be paid
+		System.out.printf("\nPrice to be paid    : Rm %.2f" , totalAfter);
+		}
+		
+		//user will get following output if they enter itemNo more than 3
+		else 
+			System.out.println("You can only enter 3 item");
+				   
+		
+
+	}
+
+}
